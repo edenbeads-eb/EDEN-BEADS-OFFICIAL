@@ -1,0 +1,71 @@
+<!doctype html>
+<div class="brand-text">Eden Beads Jewelry Studio <span class="coff">☕</span></div>
+</div>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="#">Shop</a></li>
+<li><a href="cart.html">Cart 🧺</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+
+<main class="cart-wrap wrap">
+<h2>Your Cart</h2>
+
+
+<div class="cart-layout">
+<div class="cart-box" id="cartItems"></div>
+
+
+<aside class="checkout-box">
+<div class="cart-box">
+<h3>Summary</h3>
+<div class="summary-row"><span>Subtotal</span><span id="subTotal">Rs. 0</span></div>
+<div class="summary-row"><span>Discount</span><span id="discountAmt">Rs. 0</span></div>
+<div class="summary-row total"><span>Total</span><span id="totalAmt">Rs. 0</span></div>
+
+
+<h4>Checkout</h4>
+<form id="checkoutForm">
+<label>Full Name<input name="name" required/></label>
+<label>Phone Number<input name="phone" required/></label>
+<label>Address<textarea name="address" required></textarea></label>
+<label>Payment Method
+<select name="payment">
+<option>Easypaisa</option>
+<option>JazzCash</option>
+<option>Bank Transfer</option>
+</select>
+</label>
+
+
+<div class="controls">
+<button type="button" id="clearCart" class="btn ghost">🧺 Clear Cart</button>
+<button type="button" id="placeOrder" class="btn">Place Order</button>
+</div>
+</form>
+
+
+<div id="orderMsg" class="muted"></div>
+</div>
+</aside>
+</div>
+
+
+</main>
+
+
+<footer>
+<div class="wrap footer-inner">
+<div>© 2025 Eden Beads Jewelry Studio · Made with ☕ & love 🤎</div>
+<div class="footer-icons">🤎 ☕ 🍂</div>
+</div>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>
