@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — Eden Beads</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap" style="max-width:900px;margin:36px auto;">
+    <div id="loginBox" class="card" style="padding:20px;">
+      <h2>☕ Admin Login</h2>
+      <input id="adminPass" type="password" placeholder="Enter password" style="width:100%;padding:10px;border-radius:10px;margin-top:10px">
+      <button id="loginBtn" class="btn primary" style="margin-top:10px">Login</button>
+      <p id="loginMsg" class="muted"></p>
+    </div>
+
+    <div id="adminPanel" style="display:none;margin-top:18px;">
+      <div class="card" style="padding:16px">
+        <h3>💸 Coupons</h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <input id="couponCode" placeholder="Coupon code (COFFEE10)" />
+          <input id="couponValue" placeholder="Discount %" type="number" />
+          <button id="addCouponBtn" class="btn">Add / Update</button>
+        </div>
+        <ul id="couponList" style="margin-top:12px"></ul>
+      </div>
+
+      <div class="card" style="padding:16px;margin-top:12px">
+        <h3>💬 WhatsApp & Site Settings</h3>
+        <input id="whatsappNum" placeholder="e.g. 92300xxxxxxx" />
+        <input id="businessName" placeholder="Business Name (Eden Beads Jewelry Studio)" style="margin-top:8px" />
+        <div style="margin-top:8px;display:flex;gap:8px">
+          <button id="saveWaBtn" class="btn">Save</button>
+          <button id="showDataBtn" class="btn ghost">Show current storage</button>
+        </div>
+        <div id="waMsg" class="muted" style="margin-top:8px"></div>
+      </div>
+
+      <div class="card" style="padding:16px;margin-top:12px">
+        <h3>🧰 Admin Utilities</h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button id="viewCartStorage" class="btn">View Cart Data</button>
+          <button id="clearCartStorage" class="btn ghost">Clear Cart</button>
+          <button id="viewWishlist" class="btn">View Wishlist</button>
+          <button id="clearWishlist" class="btn ghost">Clear Wishlist</button>
+        </div>
+        <pre id="adminOutput" style="margin-top:12px;background:#fff;padding:12px;border-radius:8px;max-height:220px;overflow:auto"></pre>
+      </div>
+
+      <div style="margin-top:12px">
+        <button id="logoutBtn" class="btn ghost">Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
