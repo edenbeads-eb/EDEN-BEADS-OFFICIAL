@@ -200,3 +200,47 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCartPage();
   }
 });
+/* ==== Checkout WhatsApp Logic ==== */
+document.addEventListener('DOMContentLoaded', () => {
+  const placeOrderBtn = document.getElementById('placeOrderBtn');
+  if (!placeOrderBtn) return;
+
+  placeOrderBtn.addEventListener('click', () => {
+    const name = document.getElementById('custName')?.value.trim();
+    const phone = document.getElementById('custPhone')?.value.trim();
+    const address = document.getElementById('custAddress')?.value.trim();
+    const payment = document.getElementById('paymentMethod')?.value;
+    const orderMsg = document.getElementById('orderMsg');
+
+    const cart = JSON.parse(localStorage.getItem('eden_cart') || '[]');
+    if (!cart.length) {
+      orderMsg.textContent = '🛍️ Your cart is empty!';
+      return;
+    }
+    if (!name || !phone || !address) {
+      orderMsg.textContent = '⚠️ Please fill all required fields.';
+      return;
+    }
+
+    let subtotal = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
+
+    // ✅ WhatsApp message
+    let msg = `Hi! I placed an order.\n\nName: ${name}\nPhone: ${phone}\nAddress: ${address}\n\nItems:\n`;
+    cart.forEach(it => {
+      msg += `- ${it.title} × ${it.qty} — Rs. ${it.price * it.qty}\n`;
+    });
+    msg += `\nTotal: Rs. ${subtotal}\nPayment Method: ${payment}\n\nNote: DC (Delivery Charges) will be applied later ☕`;
+
+    // ✅ Check WhatsApp number
+    const waNum = localStorage.getItem('eden_wa') || '923248037329';
+    if (waNum.includes('x')) {
+      alert('⚠️ WhatsApp number not set! Please add it in Admin Panel.');
+      return;
+    }
+
+    // ✅ Open WhatsApp chat
+    const waUrl = `https://wa.me/${waNum}?text=${encodeURIComponent(msg)}`;
+    window.open(waUrl, '_blank');
+  });
+});
+
