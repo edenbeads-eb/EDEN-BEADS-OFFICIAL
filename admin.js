@@ -140,7 +140,7 @@ function loadSettings() {
 
   // ✅ Automatically set your WhatsApp number if not already saved
   if (!localStorage.getItem("whatsappNum")) {
-    localStorage.setItem("whatsappNum", "923001234567"); // <-- replace with your number
+    localStorage.setItem("whatsappNum", "923248037329"); // <-- replace with your number
   }
 }
 
@@ -174,4 +174,5 @@ function showAllStorage() {
     }
   }
 }
+
 
