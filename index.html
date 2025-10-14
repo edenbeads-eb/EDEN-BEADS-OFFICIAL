@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eden Beads Jewelry Studio — Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <div class="logo">EB</div>
+        <div class="brand-text">Eden Beads Jewelry Studio <span class="coff">☕</span></div>
+      </div>
+
+      <nav>
+        <ul class="navlist">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="cart.html">Cart <span id="navCartCount" class="badge">0</span></a></li>
+          <li><a href="wishlist.html">Wishlist 🤎</a></li>
+          <!-- Admin link intentionally removed from nav for customers -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero wrap">
+      <div class="hero-left">
+        <h1>Handmade with care — Eden Beads</h1>
+        <p class="lead">Cozy, pastel coffee-brown jewelry made to carry warmth and charm. Simple. Cute. Timeless. ☕🤎🦋</p>
+        <a href="#shop" class="btn primary">Shop the Collection</a>
+      </div>
+      <div class="hero-art">
+        <div class="about-card">
+          <p class="doodles">🍂 🤎 🦋</p>
+          <h3>About Eden Beads</h3>
+          <p>Each piece is handcrafted with soft coffee tones and tiny details — made with ☕ & love 🤎</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop" class="shop wrap">
+      <h2>Shop</h2>
+
+      <div class="shop-controls">
+        <input id="searchInput" type="text" placeholder="Search products... ☕" />
+        <div class="coupon-inline">
+          <input id="couponInput" type="text" placeholder="Enter Coupon Code ☕" />
+          <button id="applyCouponBtn" class="btn">Apply</button>
+        </div>
+        <div id="couponMessage" class="muted"></div>
+      </div>
+
+      <div id="productGrid" class="card-grid"></div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="wrap">
+      <h3>Contact Us</h3>
+      <div class="contact-card">
+        <form id="contactForm" class="contact-form" onsubmit="return false;">
+          <label><span>💌 Name</span><input id="contactName" placeholder="Your name ☕" /></label>
+          <label><span>📱 Phone</span><input id="contactPhone" placeholder="03xx-xxxxxxx" /></label>
+          <label><span>✉️ Message</span><textarea id="contactMsg" rows="4" placeholder="Write your message..."></textarea></label>
+          <div style="display:flex;gap:8px">
+            <button id="contactSend" class="btn primary">Send Message</button>
+            <button id="contactClear" class="btn ghost">Clear</button>
+          </div>
+          <p id="contactNote" class="muted">We’ll brew a reply for you soon ☕💌</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>© 2025 Eden Beads Jewelry Studio · Made with ☕ & love 🤎</div>
+      <div>🤎 ☕ 🍂</div>
+    </div>
+  </footer>
+
+  <!-- Quick View Modal -->
+  <div id="quickViewModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="quickViewClose">✕</button>
+      <div id="quickViewBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+>
