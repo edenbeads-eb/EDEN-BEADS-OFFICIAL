@@ -134,6 +134,15 @@ function loadSettings() {
   whatsappNum.value = localStorage.getItem("whatsappNum") || "";
   businessName.value = localStorage.getItem("businessName") || "";
 }
+function loadSettings() {
+  whatsappNum.value = localStorage.getItem("whatsappNum") || "";
+  businessName.value = localStorage.getItem("businessName") || "";
+
+  // ✅ Automatically set your WhatsApp number if not already saved
+  if (!localStorage.getItem("whatsappNum")) {
+    localStorage.setItem("whatsappNum", "923001234567"); // <-- replace with your number
+  }
+}
 
 // ===== Admin Utilities =====
 viewCartStorage.addEventListener("click", () => {
@@ -165,3 +174,4 @@ function showAllStorage() {
     }
   }
 }
+
